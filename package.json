@@ -13,7 +13,7 @@
     "stylelint-scss": "^3.20.1"
   },
   "scripts": {
-    "scss": "sass asset/scss:asset/css"
+    "scss": "sass assets/scss:assets/css"
   },
   "license": "UNLICENSED"
 }
