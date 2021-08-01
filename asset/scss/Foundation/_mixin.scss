@@ -1,0 +1,48 @@
+// 呼び出し
+// ============================================
+@use "variable" as f-variable;
+
+// breakpoints
+// ============================================
+@mixin responsive($breakpoint) {
+  @if map-has-key(f-variable.$breakpoints, $breakpoint) {
+    @media screen and #{inspect(map-get(f-variable.$breakpoints, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    @error "指定されたブレークポイントは定義されていません。" + "指定できるブレークポイントは次のとおりです。 -> #{map-keys($breakpoints)}";
+  }
+}
+
+// hover
+// ============================================
+@mixin hover {
+  &:focus {
+    @content;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+// line-clamp(三点リーダー)
+// ============================================
+@mixin line-clamp($count: 3) {
+  @if type-of($count) != "number" {
+    @error 'line-clampの引数は必ず数値で指定してください';
+  }
+
+  @if $count == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $count;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

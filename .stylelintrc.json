@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "stylelint-config-recommended",
+    "stylelint-config-recommended-scss",
+    "stylelint-config-recess-order",
+    "stylelint-prettier/recommended",
+    "stylelint-config-prettier"
+  ],
+  "plugins": ["stylelint-prettier", "stylelint-scss"],
+  "rules": {
+    "at-rule-no-unknown": null,
+    "prettier/prettier": true,
+    "no-extra-semicolons": true,
+    "length-zero-no-unit": true,
+    "color-hex-case": "lower",
+    "color-hex-length": "short"
+  },
+  "ignoreFiles": ["**/node_modules/**"]
+}
