@@ -1,7 +1,7 @@
 ## Overview
 
-グリッドレイアウトサンプルページ
+GSAP サンプルページ
 
 ## Page Url
 
-[URL](https://yoshi07re.github.io/tk_samplepage/)
+[URL 未定]()
